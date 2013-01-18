@@ -1,12 +1,20 @@
 package org.zww.pocketmoney;
 public class Bank {
-	public int getPocketMoney(Student student) {
+	public int getPocketMoney(final Student student) {
 		if(student instanceof HighSchoolStudent) {
-			return 100;
+			return getPocketMoneyForHighSchoolStudent();
 		} else if(student instanceof UniversityStudent) {
-			return 500;
+			return getPocketMoneyForUniversityStudent();
 		} else {
 			return 0;
 		}
+	}
+	
+	private int getPocketMoneyForHighSchoolStudent() {
+		return 100;
+	}
+	
+	private int getPocketMoneyForUniversityStudent() {
+		return 500;
 	}
 }
