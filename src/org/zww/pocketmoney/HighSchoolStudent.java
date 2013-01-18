@@ -7,12 +7,12 @@ public class HighSchoolStudent extends Student {
 		mScore = score;
 	}
 	
+	public int getScore() {
+		return mScore;
+	}
+	
 	@Override
 	public int getPocketMoney(Bank bank) {
-		if(mScore < 90) {
-			return bank.getPocketMoney(this);
-		} else {
-			return bank.getPocketMoney(this);
-		}
+		return bank.getPocketMoney(this);
 	}
 }
