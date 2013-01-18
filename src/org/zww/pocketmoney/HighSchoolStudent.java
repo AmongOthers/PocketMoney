@@ -10,9 +10,9 @@ public class HighSchoolStudent extends Student {
 	@Override
 	public int getPocketMoney(Bank bank) {
 		if(mScore < 90) {
-			return bank.getPocketMoney(StudentType.HIGHSCHOOL);
+			return bank.getPocketMoney(this);
 		} else {
-			return bank.getPocketMoney(StudentType.OUTSTANDING_HIGHSCHOOL);
+			return bank.getPocketMoney(this);
 		}
 	}
 }
