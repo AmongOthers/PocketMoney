@@ -1,10 +1,12 @@
 package org.zww.pocketmoney;
 public class Bank {
-	public int getPocketMoney(final Student student) {
-		if(student instanceof HighSchoolStudent) {
+	public int getPocketMoney(StudentType type) {
+		if(type == StudentType.HIGHSCHOOL) {
 			return getPocketMoneyForHighSchoolStudent();
-		} else if(student instanceof UniversityStudent) {
+		} else if(type == StudentType.UNIVERSITY) {
 			return getPocketMoneyForUniversityStudent();
+		} else if(type == StudentType.OUTSTANDING_HIGHSCHOOL) {
+			return getPocketMoneyForOutstandingHighSchool();
 		} else {
 			return 0;
 		}
@@ -16,5 +18,9 @@ public class Bank {
 	
 	private int getPocketMoneyForUniversityStudent() {
 		return 500;
+	}
+	
+	private int getPocketMoneyForOutstandingHighSchool() {
+		return 200;
 	}
 }

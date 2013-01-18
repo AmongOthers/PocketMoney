@@ -4,6 +4,6 @@ public class UniversityStudent extends Student {
 
 	@Override
 	public int getPocketMoney(Bank bank) {
-		return bank.getPocketMoney(this);
+		return bank.getPocketMoney(StudentType.UNIVERSITY);
 	}
 }

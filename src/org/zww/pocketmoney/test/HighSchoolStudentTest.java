@@ -10,17 +10,22 @@ import org.zww.pocketmoney.Student;
 
 public class HighSchoolStudentTest {
 	private Bank mBank;
-	private Student mStudent;
 	
 	@Before
 	public void setup() throws Exception {
 		mBank = new Bank();
-		mStudent = new HighSchoolStudent();
 	}
 
 	@Test
 	public void testGetPocketMoney() {
-		assertEquals(100, mStudent.getPocketMoney(mBank));
+		Student student = new HighSchoolStudent(60);
+		assertEquals(100, student.getPocketMoney(mBank));
+	}
+	
+	@Test
+	public void testGetPocketMoneyForOutstandingHighSchoolStudent() {
+		Student student = new HighSchoolStudent(100);
+		assertEquals(200, student.getPocketMoney(mBank));
 	}
 
 }
